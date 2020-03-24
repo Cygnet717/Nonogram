@@ -1,3 +1,23 @@
 * {
     box-sizing: border-box;
   }
+
+  .gameBox{
+    display: flex;
+    flex-wrap: wrap;
+    width: 10px; /*adjust to 20 X axisSize*/
+    height: 10px;
+  }
+
+  .cell{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    margin: auto;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .shade{
+    background-color: blue;
+  }
