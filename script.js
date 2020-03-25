@@ -79,34 +79,35 @@ $(document).ready(function(){
       }
       allColumnClues[i] = column;
     }
-    return (populateBoard(gameBoard, axisSize),
-            populateClues(allRowClues, allColumnClues, axisSize))
+    return (
+      populateBoard(gameBoard, axisSize),
+      populateClues(allRowClues, allColumnClues, axisSize)
+    );
   }
 
   //fill gameboard with puzzle
   function populateBoard(gameBoard, axisSize){
-      let gameBoxContents = '';
-      for(let i=0; i<gameBoard.length; i++){
-          for(let j=0; j<gameBoard[i].length; j++){
-              if(gameBoard[i][j] === 1){ //space to be shaded
-                  gameBoxContents = gameBoxContents.concat(`<div class='cell solution'></div>`)
-              } else {
-                  gameBoxContents = gameBoxContents.concat(`<div class='cell not'></div>`)
-              }
-          }
+    let gameBoxContents = '';
+    for(let i=0; i<gameBoard.length; i++){
+      for(let j=0; j<gameBoard[i].length; j++){
+        if(gameBoard[i][j] === 1){ //space to be shaded
+          gameBoxContents = gameBoxContents.concat(`<div class='cell solution'></div>`);
+        } else {
+          gameBoxContents = gameBoxContents.concat(`<div class='cell not'></div>`);
+        }
       }
-      let width = axisSize*20;
-      $('.gameBox').css({'width': `${width}px`, 'height': `${width}px`})
-      $('.rowClues').css({'height': `${width}px`})
-      $('.columnClues').css({'width': `${width}px`})
-      $('.gameBox').append(gameBoxContents)
+    }
+    let width = axisSize*20;
+    $('.gameBox').css({'width': `${width}px`, 'height': `${width}px`});
+    $('.rowClues').css({'height': `${width}px`});
+    $('.columnClues').css({'width': `${width}px`});
+    $('.gameBox').empty().append(gameBoxContents);
   }
 
   //fill clue boxes with clues
   function populateClues(rowClues, columnClues, axisSize){
     //concat filling for rowClues
     let rowClueContents = '';
-    console.log(rowClues)
     for(let i=0; i<rowClues.length; i++){
       let rowString = JSON.stringify(rowClues[i]).replace(/,/gi, ' ');
       rowString = rowString.slice(1, rowString.length-1);
@@ -120,9 +121,17 @@ $(document).ready(function(){
       columnClueContents = columnClueContents.concat(`<span class='columnClue'>${columnString}</span>`);
     }
     //clear and insert clues into respective locations
-    $('.rowClues').empty().append(rowClueContents)
-    $('.columnClues').empty().append(columnClueContents)
+    $('.rowClues').empty().append(rowClueContents);
+    $('.columnClues').empty().append(columnClueContents);
   }
+
+  //click controls
+  $('.gameBox').on('click', '.cell', event=>{
+    event.preventDefault();
+    
+    //console.log($(event.target).attr('class'))
+    
+  })
 
     //if xed insert &cross;
     //if shaded  class lit
