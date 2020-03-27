@@ -126,15 +126,36 @@ $(document).ready(function(){
   }
 
   //click controls
+  let colorEmptyToggle = true;
+
+  $('.toggle').on('click', event=> {
+    colorEmptyToggle = !colorEmptyToggle;
+  })
+
   $('.gameBox').on('click', '.cell', event=>{
     event.preventDefault();
-    
-    //console.log($(event.target).attr('class'))
+    if(colorEmptyToggle ===  true){
+      if($(event.target).attr('class').includes('color')){
+      $(event.target).removeClass('color');
+      } else if($(event.target).attr('class').includes('empty')) {
+
+      } else {
+        $(event.target).addClass('color');
+      }
+    } else {
+      if($(event.target).attr('class').includes('empty')){
+          $(event.target).removeClass('empty').empty();
+        } else if($(event.target).attr('class').includes('color')){
+
+        } else {
+          $(event.target).addClass('empty').append('&cross;');
+        }
+    }
     
   })
 
-    //if xed insert &cross;
-    //if shaded  class lit
+    //if xed insert &cross; empty
+    //if shaded  class lit  color
 
   nonogram (10)
   //console.log(gameBoard)

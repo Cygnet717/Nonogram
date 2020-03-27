@@ -12,7 +12,14 @@ h1{
   margin-left: auto;
   margin-right: auto;
   width: max-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
+.rowAndGameBox{
+  display: flex;
 }
 
 .gameBox{
@@ -26,11 +33,10 @@ h1{
 .rowClues{
   display: flex;
   flex-direction: column;
-  float: left;
-  margin-top: 80px;
-  height: 200px; /*adjust to 20 X axisSize*/
+  /*height: 200px; /*adjust to 20 X axisSize*/
   justify-content: space-evenly;
   width: max-content;
+  height: 100%;
 }
 
 .rowClue{
@@ -41,7 +47,8 @@ h1{
 
 /*column clue styles*/
 .columnClues{
-  height:80px;
+  min-height:80px;
+  height: max-content;
   display: flex;
   justify-content: space-evenly;
   width: 200px; /*adjust to 20 X axisSize*/
@@ -64,8 +71,13 @@ h1{
   text-align: center;
 }
 
-.shade{
+.color{
   background-color: blue;
+  border: 1px solid white;
+}
+
+.empty{
+
 }
 
 .toggle{
@@ -73,4 +85,5 @@ h1{
   margin-left: auto;
   margin-right: auto;
   width: max-content;
+  margin-top: 20px;
 }
