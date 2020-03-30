@@ -128,8 +128,9 @@ $(document).ready(function(){
   //click controls
   let colorEmptyToggle = true;
 
-  $('.toggle').on('click', event=> {
+  $('.switch').on('mousedown', event=> {
     colorEmptyToggle = !colorEmptyToggle;
+    console.log(colorEmptyToggle)
   })
 
   $('.gameBox').on('click', '.cell', event=>{
@@ -154,7 +155,7 @@ $(document).ready(function(){
     
   })
 
-    //if xed insert &cross; empty
+    //if xed insert  empty
     //if shaded  class lit  color
 
   nonogram (10)
