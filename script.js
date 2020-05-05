@@ -87,10 +87,11 @@ $(document).ready(function(){
 
   //fill gameboard with puzzle
   function populateBoard(gameBoard, axisSize){
+    console.log(gameBoard)
     let gameBoxContents = '';
     for(let i=0; i<gameBoard.length; i++){
       for(let j=0; j<gameBoard[i].length; j++){
-        if(gameBoard[i][j] === 1){ //space to be shaded
+        if(gameBoard[i][j] === 1){ //if it is a space to be shaded
           gameBoxContents = gameBoxContents.concat(`<div class='cell solution'></div>`);
         } else {
           gameBoxContents = gameBoxContents.concat(`<div class='cell not'></div>`);
@@ -130,7 +131,6 @@ $(document).ready(function(){
 
   $('.switch').on('mousedown', event=> {
     colorEmptyToggle = !colorEmptyToggle;
-    console.log(colorEmptyToggle)
   })
 
   $('.gameBox').on('click', '.cell', event=>{
@@ -152,11 +152,23 @@ $(document).ready(function(){
           $(event.target).addClass('empty').append('&cross;');
         }
     }
-    
+    checkWinCondition()
   })
 
     //if xed insert  empty
     //if shaded  class lit  color
+
+    //win condition
+    function checkWinCondition(){
+      $('.solution').each(function () {
+        if($(this).attr('class') === 'color'){//not working
+          console.log('--')
+        }
+      })
+      
+      
+    }
+    //if all cells with class solution are colored
 
   nonogram (10)
   //console.log(gameBoard)
