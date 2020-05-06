@@ -14,8 +14,11 @@ $(document).ready(function(){
         gameArray = gameArray.concat(0);
       }
     }
-    return makeRows(gameArray, axisSize);
+    return makeRows(gameArray, axisSize),
+      createWinCondition(gameArray);
   }
+
+
 
   //break array into rows of specefied size
   function makeRows(arr, axisSize){
@@ -105,6 +108,20 @@ $(document).ready(function(){
     $('.gameBox').empty().append(gameBoxContents);
   }
 
+  
+  //creates answer array to compare to
+  let answer = [];
+
+  function createWinCondition(){
+    $('.cell').each(function(){
+      if($(this).attr('class').includes('solution')){
+        answer.push('T')
+      } else if ($(this).attr('class').includes('not')){
+        answer.push('F')
+      }
+    })
+  }
+
   //fill clue boxes with clues
   function populateClues(rowClues, columnClues, axisSize){
     //concat filling for rowClues
@@ -159,15 +176,29 @@ $(document).ready(function(){
     //if shaded  class lit  color
 
     //win condition
-    function checkWinCondition(){
-      $('.solution').each(function () {
-        if($(this).attr('class') === 'color'){//not working
-          console.log('--')
-        }
-      })
-      
-      
+  function checkWinCondition(){
+    let testAnswer = [];
+
+    $('.cell').each(function () {
+      if($(this).attr('class').includes('color')){
+        testAnswer.push('T')
+      } else {
+        testAnswer.push('F')
+      }
+    })
+    
+    let correct = true;
+    for(let i=0; i<testAnswer.length; i++){
+      if(testAnswer[i] !== answer[i]){
+        correct = false
+      }
     }
+    if(correct){
+      $('.cell').css({'pointer-events': 'none'})
+      $('.color').css({'animation': 'flashColor 2s', 'animation-iteration-count': 'infinite'})
+      $('.winNotification').css({'display': 'block'})
+    }
+  }
     //if all cells with class solution are colored
 
   nonogram (10)
