@@ -2,10 +2,24 @@
     box-sizing: border-box;
 }
 
+html { 
+  background-image: linear-gradient(to bottom right, black, #425059); 
+  background-repeat: no-repeat;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 h1{
   width: max-content;
   margin-left: auto;
   margin-right: auto;
+  padding: 15px;
+  color: rgb(220, 228, 252);
+  border: 2px solid rgb(220, 228, 252);
+  border-radius: 15px;
 }
 
 .centeringBox{
@@ -16,6 +30,9 @@ h1{
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  background-color: #C1C7D9;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .rowAndGameBox{
@@ -72,8 +89,7 @@ h1{
 }
 
 .color{
-  background-color: blue;
-  border: 1px solid white;
+  background-color: #191C59;
 }
 
 .toggle{
@@ -84,6 +100,9 @@ h1{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background-color: #687B8C;
+  padding: 15px 0px 15px 30px;
+  border-radius: 15px;
 }
 
 .switch {
@@ -105,10 +124,8 @@ h1{
 .sqr{
   height: 20px;
   width: 20px;
- 
-  background-color: blue;
-  border: 1px solid white;
-  
+  background-color: #191C59;
+  border: 1px solid rgb(150, 150, 150);
 }
 
 @keyframes flashColor {
@@ -133,10 +150,10 @@ h1{
   position: absolute;
   cursor: pointer;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 15px;
+  right: -15px;
   bottom: 0;
-  background-color: #2196F3;
+  background-color: #394D59;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -154,11 +171,11 @@ h1{
 }
 
 input:checked + .slider {
-  background-color: #ccc;
+  background-color: #C1C7D9;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #ccc;
+  box-shadow: 0 0 1px rgb(116, 116, 116);
 }
 
 input:checked + .slider:before {
@@ -167,7 +184,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* Rounded slider */
 .slider.round {
   border-radius: 34px;
 }

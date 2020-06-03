@@ -172,10 +172,6 @@ $(document).ready(function(){
     checkWinCondition()
   })
 
-    //if xed insert  empty
-    //if shaded  class lit  color
-
-    //win condition
   function checkWinCondition(){
     let testAnswer = [];
 
@@ -199,8 +195,5 @@ $(document).ready(function(){
       $('.winNotification').css({'display': 'block'})
     }
   }
-    //if all cells with class solution are colored
-
   nonogram (10)
-  //console.log(gameBoard)
 })
