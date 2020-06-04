@@ -18,8 +18,6 @@ $(document).ready(function(){
       createWinCondition(gameArray);
   }
 
-
-
   //break array into rows of specefied size
   function makeRows(arr, axisSize){
     let arrRows = [];
@@ -90,7 +88,6 @@ $(document).ready(function(){
 
   //fill gameboard with puzzle
   function populateBoard(gameBoard, axisSize){
-    console.log(gameBoard)
     let gameBoxContents = '';
     for(let i=0; i<gameBoard.length; i++){
       for(let j=0; j<gameBoard[i].length; j++){
@@ -174,7 +171,6 @@ $(document).ready(function(){
 
   function checkWinCondition(){
     let testAnswer = [];
-
     $('.cell').each(function () {
       if($(this).attr('class').includes('color')){
         testAnswer.push('T')
@@ -182,7 +178,6 @@ $(document).ready(function(){
         testAnswer.push('F')
       }
     })
-    
     let correct = true;
     for(let i=0; i<testAnswer.length; i++){
       if(testAnswer[i] !== answer[i]){
@@ -195,5 +190,12 @@ $(document).ready(function(){
       $('.winNotification').css({'display': 'block'})
     }
   }
+
+  //refresh page for a new game when h1 is clicked
+
+  $('h1').on('click', event => {
+    history.go(0)
+  })
+
   nonogram (10)
 })

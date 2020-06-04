@@ -3,7 +3,7 @@
 }
 
 html { 
-  background-image: linear-gradient(to bottom right, black, #425059); 
+  background-image: linear-gradient(to bottom right, black, #606f79); 
   background-repeat: no-repeat;
   height: 100%;
   -webkit-background-size: cover;
@@ -73,7 +73,8 @@ h1{
 
 .columnClue{
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: sideways;
+  text-orientation: sideways-right;
   border-right: 1px solid black;
   width: 100%;
   text-align: end;
