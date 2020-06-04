@@ -131,7 +131,7 @@ $(document).ready(function(){
     //concat filling for columnClues
     let columnClueContents = '';
     for(let i=0; i<columnClues.length; i++){
-      let columnString = JSON.stringify(columnClues[i]).replace(/,/gi, '');
+      let columnString = JSON.stringify(columnClues[i]).replace(/,/gi, ' ');
       columnString = columnString.slice(1, columnString.length-1);
       columnClueContents = columnClueContents.concat(`<span class='columnClue'>${columnString}</span>`);
     }

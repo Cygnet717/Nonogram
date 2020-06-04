@@ -64,20 +64,21 @@ h1{
 
 /*column clue styles*/
 .columnClues{
-  min-height:80px;
+  min-height: 80px;
   height: max-content;
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-end;
   width: 200px; /*adjust to 20 X axisSize*/
 }
 
 .columnClue{
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-  text-orientation: sideways-right;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-align: center;
+  text-align-last: center;
   border-right: 1px solid black;
-  width: 100%;
-  text-align: end;
+  width: 20px;
 }
 
 .cell{
