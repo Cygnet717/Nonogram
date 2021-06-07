@@ -137,11 +137,11 @@ h1{
 
 @keyframes flashColor {
   0% {background-color: blue; color: white;}
-  10% {background-color: purple; color: white;}
-  30% {background-color: red; color: rgb(184, 182, 182);}
-  50% {background-color: orangered; color: rgb(49, 49, 49);}
-  70% {background-color: yellow; color: rgb(49, 49, 49);}
-  90% {background-color: green; color: rgb(184, 182, 182);}
+  16.6% {background-color: purple; color: white;}
+  33.2% {background-color: red; color: rgb(184, 182, 182);}
+  49.8% {background-color: orangered; color: rgb(49, 49, 49);}
+  66.4% {background-color: yellow; color: rgb(49, 49, 49);}
+  83% {background-color: green; color: rgb(184, 182, 182);}
   100% {background-color: blue; color: white;}
 }
 
@@ -209,7 +209,7 @@ input:checked + .slider:before {
   margin-right: auto;
   margin-top: 20px;
   padding: 20px;
-  animation: flashColor 2s; 
+  animation: flashColor 8s; 
   animation-iteration-count: infinite;
 }
 
